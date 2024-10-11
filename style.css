@@ -1,0 +1,179 @@
+:root {
+    --c1: rgb(230, 230, 230);
+    --c1-1: rgb(215, 215, 215);
+    --c2: rgb(30, 30, 30);
+    --c2-1: rgb(10, 10, 10);
+    --c3: rgb(80, 80, 255);
+    --c3-1: rgb(60, 60, 255);
+}
+
+.dark_theme {
+    --c1: rgb(30, 30, 30);
+    --c1-1: rgb(40, 40, 40);
+    --c2: rgb(230, 230, 230);
+    --c2-1: rgb(250, 250, 250);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: clamp(11px, 2vw, 20px);
+    font-family: sans-serif;
+}
+
+body {
+    color: var(--c2);
+    line-height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--c1);
+    transition: background-color 0.2s ease;
+}
+
+#theme_icon {
+    width: 2rem;
+    cursor: pointer;
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+}
+
+#reload_icon {
+    width: 2rem;
+    cursor: pointer;
+    position: fixed;
+    top: 1.5rem;
+    left: 1.5rem;
+}
+
+#theme_icon:hover {
+    top: 1.4rem;
+    right: 1.4rem;
+    width: 2.2rem;
+}
+
+#reload_icon:hover {
+    top: 1.4rem;
+    left: 1.4rem;
+    width: 2.2rem;
+}
+
+h2 {
+    font-size: 2.4rem;
+    margin: 10rem 0 4rem 0;
+    text-align: center;
+}
+
+#names_container {
+    display: flex;
+    justify-content: center;
+}
+
+input,
+button {
+    text-align: center;
+    font-weight: bold;
+    border: 0.15rem solid var(--c3);
+    border-radius: 1rem;
+}
+
+input {
+    display: block;
+    margin: 0 auto;
+    padding: 0.5rem;
+    color: var(--c2);
+    background-color: transparent;
+}
+
+.general_button {
+    display: block;
+    margin: 1rem auto 2rem;
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--c2);
+    border: 0.15rem solid var(--c2);
+    transition: background-color 0.2s ease;
+}
+
+#listo {
+    margin: 0 auto;
+}
+
+.general_button:hover {
+    background-color: var(--c1-1);
+    border-color: var(--c2-1);
+    color: var(--c2-1);
+}
+
+.name_button {
+    margin: 2rem 0.5rem 0 0.5rem;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--c2);
+    transition: background-color 0.2s ease;
+}
+
+.name_button.selected {
+    background-color: var(--c3);
+    color: rgb(230, 230, 230);
+}
+
+.name_button:hover {
+    background-color: var(--c1-1);
+    border-color: var(--c3-1);
+    color: var(--c2-1);
+}
+
+.name_button.selected:hover {
+    background-color: var(--c3-1);
+    border-color: var(--c3-1);
+    color: rgb(250, 250, 250);
+}
+
+#main_container,
+#names {
+    min-width: 22rem;
+}
+
+#main_container {
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+}
+
+#main_container.visible {
+    opacity: 1;
+}
+
+#expense_amount {
+    width: 7rem;
+}
+
+#line {
+    margin: 0.7rem 0;
+    border: none;
+    border-top: 2px solid var(--c3-1);
+    width: 100%;
+}
+
+div, span {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+::selection{
+    text-decoration: none;
+}
+
+input::selection {
+    text-decoration: underline;
+}
+
+input:focus {
+    outline: none;
+    color: var(--c2-1);
+    border-color: var(--c3-1);
+}

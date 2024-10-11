@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Splitter</title>
+    <link rel="icon" href="icon.ico">
+</head>
+<body>
+    <div id="main_container">
+        <img src="images/moon.png" id="theme_icon" onclick="changeTheme()"></img>
+        <img src="images/home.png" id="reload_icon" onclick="reloadPage()"></img>
+        <h2>Cash Splitter</h2>
+
+        <div id="form_container">
+            <input type="text" id="names" value="Nato, Milton, Merenda, Gallardo, Mariano"><br>
+            <button class="general_button" id="listo" onclick="addNames()">Listo</button>
+        </div>
+        <div id="expense_container" style="display: none;">
+            <input type="text" id="expense_amount" value="$0" oninput="formatCurrency(this)">
+            <div id="names_container"></div><br>
+            <button class="general_button" onclick="addExpense(event)">Agregar</button>
+            <button class="general_button" onclick="showResults()">Calcular</button>
+        </div>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
